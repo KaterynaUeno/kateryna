@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <h1 class="display-4">More info about organisation:</h1>
+  <p class="lead"></p>
+  <hr class="my-4">
+  <p><strong>Name:</strong>
+  <%= @organisation.name %></p>
+  <p><strong>Hourly rate:</strong>
+  <%= @organisation.hourly_rate %></p>
+  <%= link_to 'Edit', edit_organisation_path(@organisation), class:"btn btn-dark" %>
+  <%= link_to 'Back', organisations_path, class: "btn btn-light" %>
+</div>
