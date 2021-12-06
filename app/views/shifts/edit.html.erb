@@ -1,6 +1,6 @@
 <h2> Edit Shift </h2>
-    <table style="width:100%">
-        <thead>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
             <tr>
                 <th>Employee name</th>
                 <th>Shift date</th>
@@ -14,7 +14,7 @@
 
         <tbody>
             <tr>
-                <td style="text-align: left;"><%= current_user.name %></td>
+                <td style="text-align: left;"><%= current_user%></td>
                 <td><%= f.date_field :date%></td>
                 <td><%= f.time_field :start%></td>
                 <td><%= f.time_field :finish%></td>
