@@ -8,13 +8,18 @@ class ShiftsController < ApplicationController
   end
 
   def new
+    @user = User.new
     @shift = Shift.new
     redirect_to shifts_path
   end
 
+  def show
+    @shift = Shift.find(params[:id])
+  end
+
   def create
     date = shift_params[:date]
-    @shift = Shift.create(user_id: current_user.id, start:start_datetime, finish: finish_datetime, break_length: shift_params[:break_length])
+    @shift = Shift.create(user_id: current_user, start: start_datetime, finish: finish_datetime, break_length: shift_params[:break_length])
     if @shift.save
       redirect_to shifts_path
     end
@@ -35,11 +40,8 @@ class ShiftsController < ApplicationController
     redirect_to shifts_path
   end
 
-  private
-
   def shift_length(start, finish)
-    if start.before? finish
-      (finish - start) / 60
-    end
+    start.before? finish
+    (finish - start) / 60
   end
 end
