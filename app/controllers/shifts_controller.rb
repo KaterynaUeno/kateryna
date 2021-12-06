@@ -8,11 +8,8 @@ class ShiftsController < ApplicationController
   end
 
   def new
-    if @user.organisation_id
-      @shift = Shift.new
-    else
-      redirect_to shifts_path
-    end
+    @shift = Shift.new
+    redirect_to shifts_path
   end
 
   def create
