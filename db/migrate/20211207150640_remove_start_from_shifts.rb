@@ -1,0 +1,5 @@
+class RemoveStartFromShifts < ActiveRecord::Migration[6.0]
+  def change
+    remove_column :shifts, :start, :datetime
+  end
+end
