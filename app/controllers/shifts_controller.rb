@@ -1,4 +1,5 @@
 class ShiftsController < ApplicationController
+
   def shift_params
     params.require(:shift).permit(:date, :start, :finish, :break_length)
   end
